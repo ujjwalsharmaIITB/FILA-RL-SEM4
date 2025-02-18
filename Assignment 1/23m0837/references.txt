@@ -1,0 +1,26 @@
+Task 1
+    Part 3 KL-UCB
+        1. Definition of KL divergence is taken from the slides Lecture 2 - slide 55 (https://www.cse.iitb.ac.in/~shivaram/teaching/cs747-s2025/lectures/cs747a2022l02.pdf) and
+        https://github.com/guptav96/bandit-algorithms/blob/main/algo/klucb.py
+        2. Added stopping condition for the loop by setting maximum amount of loop, https://github.com/guptav96/bandit-algorithms/blob/main/algo/klucb.py 
+
+    Part 4 Thompson sampling.
+        1. Usage of beta distribution referenced https://numpy.org/doc/2.1/reference/random/generated/numpy.random.beta.html
+
+
+Task 2
+    The logic and code is done fully be me.
+    Reference for argsort https://numpy.org/doc/2.1/reference/generated/numpy.argsort.html
+
+Task 3
+    Majority of the code is taken from autograder.py and simiulate.py
+    
+
+Reoprt Writing:
+    I used ChatGPT for some sections to improve the writing.
+    Prompt:
+    """
+    I am writing a report for my assignment.
+    Improve the writing.
+    {content}
+    """

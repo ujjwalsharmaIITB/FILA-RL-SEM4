@@ -2,29 +2,6 @@ import numpy as np
 
 epsilon = 1e-10
 
-def getOptimalValuesUsingValueIteration(numStates, numActions, end_states, transitions, rewards, gamma):
-    # initialize V(s) for all states
-    Value = np.zeros(numStates, dtype=float)
-    # epsilon = 1e-10
-    # loop until V converges
-    while True:
-        Value_New = np.zeros(numStates, dtype=float)
-        for state in range(numStates):
-            if state in end_states:
-                Value_New[state] = 0
-            else:
-                # calculate max_a sum_s' P(s' | s, a) * (R(s, a, s') + gamma * V(s'))
-                for action in range(numActions):
-                    for statePrime in range(numStates):
-                        newStateValue = transitions[state][action][statePrime] * (rewards[state][action][statePrime] + gamma * Value[statePrime])
-                        
-        
-                        Value_New[state] = max(Value_New[state], newStateValue)
-        Value = Value_New
-        # check for convergence
-        if np.max(np.abs(Value_New - Value)) < epsilon:
-            break
-    return Value
             
 
 def getQValue(numStates, state, action, transitions, rewards, Value, gamma):
@@ -50,7 +27,7 @@ def valueIterationSolver(policy, numStates, numActions, end_states, transitions,
                 Value_New[state] = 0
             else:
                 # do policy iteration
-                # policy is statiorary and deterministic so evaluation is 
+                # policy is stationary and deterministic so evaluation is 
                 action = policy[state]
                 value_prime = 0
                 for statePrime in range(numStates):

@@ -28,12 +28,15 @@ def getPolicyFromValusStar(numStates, numActions, transitions, rewards, gamma, v
 def linearProgrammingSolver(numStates, numActions, end_states, transitions, rewards, gamma):
     Values = [LpVariable(f"V({i})") for i in range(numStates)]
     # MDPPlanningProblem = LpProblem("MDPPlanningProblem", LpMinimize)
-    MDPPlanningProblem = LpProblem("MDPPlanningProblem", LpMaximize)
+    MDPPlanningProblem = LpProblem("MDPPlanningProblem", LpMaximize) # Also tried using this 
 
-    # objective is maximize - sum Vs 
+    # objective is Maximize the negative sum Vs 
+    # definition taken from the slides
     
+    # MDPPlanningProblem += sum(Values)  if LpMinimize is used
     # MDPPlanningProblem += -1 * sum(Values)
-    MDPPlanningProblem += -1 * lpSum(Values)
+    # https://coin-or.github.io/pulp/main/includeme.html#useful-functions
+    MDPPlanningProblem +=  -1 * lpSum(Values)
 
     for state in range(numStates):
         if state in end_states:

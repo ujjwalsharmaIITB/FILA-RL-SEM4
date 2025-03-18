@@ -1,0 +1,15 @@
+Part 1:
+    Howards Policy Iteration:
+        Value iteration taken from RL book page 74.
+        Convergance check was provided by Github Copilot
+        All the code and its design is done by me.
+    
+    LinearProgramming:
+        lpSum : https://coin-or.github.io/pulp/main/includeme.html#useful-functions
+        
+
+
+
+
+Used ChatGPT to improve the writing for the report
+Prompt : improve the writing \n{writing}

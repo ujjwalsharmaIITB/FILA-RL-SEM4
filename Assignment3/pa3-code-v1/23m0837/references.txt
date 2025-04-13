@@ -1,0 +1,7 @@
+I have worked on this assignment on my own
+For fitness function i have borrowed the code given in the eval mode (`if not train` condition)
+
+For report generation i have used chatGPT to improve the Writing
+Prompt: 
+    I am writing an Assignment:
+    Improve the writing.
